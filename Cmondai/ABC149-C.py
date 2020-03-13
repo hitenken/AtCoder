@@ -1,16 +1,15 @@
-import math 
-def is_prime(x):
-    j = 2
-    while(j <= math.sqrt(x)):
-        if x % j == 0:
-            return False
-        j += 1
-    return True
-    
-    
-x = int(input())
+from math import sqrt
 
-while (not is_prime(x)):
-     x += 1
-    
+def next_prime(x):
+    i = 2
+    while i*i <= x:
+        if x % i == 0:
+            return True
+        i += 1
+    return False
+
+x = int(input())
+while next_prime(x):
+      x = x + 1
+
 print(x)
